@@ -17,6 +17,7 @@ class RomanNumberConverter {
         put(5, "V");
         put(4, "IV");
         put(1, "I");
+        put(0, "");
     }};
 
     String toRoman(Integer number) {
@@ -28,6 +29,6 @@ class RomanNumberConverter {
             return entry.getValue() + toRoman(number - entry.getKey());
         }
 
-        return "";
+        return null;
     }
 }
