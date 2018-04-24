@@ -9,4 +9,9 @@ public class RomanNumberConverterTest {
     public void evaluates_number_one() {
         assertEquals("I", converter.toRoman(1));
     }
+
+    @Test
+    public void evaluates_number_two() {
+        assertEquals("II", converter.toRoman(2));
+    }
 }
