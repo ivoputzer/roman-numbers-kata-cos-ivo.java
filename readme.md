@@ -1,10 +1,11 @@
 Roman Numerals
 ==============
 
+Today I did the following Kata with [@simcogno](https://github.com/simcogno), here's the outcome!
+
 ### About this Kata
 I wasn’t there, but I believe this Kata was performed at XP2001 by Kent Beck. Here is [a video of Karl Scotland doing this Kata in Excel at agile 2008] Here is [a video of JonJagger doing this Kata in Ruby using CyberDojo]
 
-Difficulty - Easy.
 
 ### Problem Description
 The Romans were a clever bunch. They conquered most of Europe and ruled it for hundreds of years. They invented concrete and straight roads and even bikinis [1]. One thing they never discovered though was the number zero. This made writing and dating extensive histories of their exploits slightly more challenging, but the system of numbers they came up with is still in use today. For example the BBC uses Roman numerals to date their programmes.
@@ -24,7 +25,7 @@ For a full description of how it works, take a look at [this useful reference we
 
 There is no need to be able to convert numbers larger than about 3000. (The Romans themselves didn’t tend to go any higher)
 
-### Part II
+### Part II (still to do)
 Write a function to convert in the other direction, ie numeral to digit
 
 ### Clues
