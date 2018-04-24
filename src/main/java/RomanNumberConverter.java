@@ -1,31 +1,32 @@
-import java.net.Inet4Address;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 class RomanNumberConverter {
 
-    Map link = new HashMap<Integer, String>() {{
-        put(0, "");
-        put(1, "I");
-        put(4, "IV");
-        put(5, "V");
-        put(9, "IX");
+    Map<Integer, String> numbers = new LinkedHashMap<Integer, String>(){{
+        put(1000, "M");
+        put(900, "CM");
+        put(500, "D");
+        put(400, "CD");
+        put(100, "C");
+        put(90, "XC");
+        put(50, "L");
+        put(40, "XL");
         put(10, "X");
+        put(9, "IX");
+        put(5, "V");
+        put(4, "IV");
+        put(1, "I");
     }};
 
     String toRoman(Integer number) {
+        if (numbers.containsKey(number))
+            return String.valueOf(numbers.get(number));
 
-        if (link.containsKey(number))
-            return String.valueOf(link.get(number));
-
-        if (number >= 10)
-            return "X" + toRoman(number - 10);
-
-        if (number >= 5)
-            return "V" + toRoman(number - 5);
-
-        if (number >= 1)
-            return "I" + toRoman(number - 1);
+        for (Map.Entry<Integer, String> entry : numbers.entrySet()) {
+            if (number < entry.getKey()) continue;
+            return entry.getValue() + toRoman(number - entry.getKey());
+        }
 
         return "";
     }
