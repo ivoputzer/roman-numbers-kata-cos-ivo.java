@@ -39,4 +39,54 @@ public class RomanNumberConverterTest {
     public void evaluates_number_six() {
         assertEquals("VI", converter.toRoman(6));
     }
+
+    @Test
+    public void evaluates_number_seven() {
+        assertEquals("VII", converter.toRoman(7));
+    }
+
+    @Test
+    public void evaluates_number_eight() {
+        assertEquals("VIII", converter.toRoman(8));
+    }
+
+    @Test
+    public void evaluates_number_nine() {
+        assertEquals("IX", converter.toRoman(9));
+    }
+
+    @Test
+    public void evaluates_number_ten() {
+        assertEquals("X", converter.toRoman(10));
+    }
+
+    @Test
+    public void evaluates_number_eleven() {
+        assertEquals("XI", converter.toRoman(11));
+    }
+
+    @Test
+    public void evaluates_number_thirteen() {
+        assertEquals("XIII", converter.toRoman(13));
+    }
+
+    @Test
+    public void evaluates_number_fourteen() {
+        assertEquals("XIV", converter.toRoman(14));
+    }
+
+    @Test
+    public void evaluates_number_twenty() {
+        assertEquals("XX", converter.toRoman(20));
+    }
+
+    @Test
+    public void evaluates_number_thirtyeight() {
+        assertEquals("XXXVIII", converter.toRoman(38));
+    }
+
+    @Test
+    public void evaluates_number_thirtynine() {
+        assertEquals("XXXIX", converter.toRoman(39));
+    }
 }
