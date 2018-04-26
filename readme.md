@@ -25,7 +25,7 @@ For a full description of how it works, take a look at [this useful reference we
 
 There is no need to be able to convert numbers larger than about 3000. (The Romans themselves didn’t tend to go any higher)
 
-### Part II (still to do)
+### Part II
 Write a function to convert in the other direction, ie numeral to digit
 
 ### Clues

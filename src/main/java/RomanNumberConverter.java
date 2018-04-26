@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -20,7 +21,26 @@ class RomanNumberConverter {
         put(0, "");
     }};
 
-    String toRoman(Integer number) {
+    Map<String, Integer> numbersInverted = new LinkedHashMap<String, Integer>(){{
+        put("M", 1000);
+        put("CM", 900);
+        put("D", 500);
+        put("CD", 400);
+        put("C", 100);
+        put("XC", 90);
+        put("L", 50);
+        put("XL", 40);
+        put("X", 10);
+        put("IX", 9);
+        put("V", 5);
+        put("IV", 4);
+        put("I", 1);
+        put("", 0);
+    }};
+
+
+
+    public String toRoman(Integer number) {
         if (numbers.containsKey(number))
             return String.valueOf(numbers.get(number));
 
@@ -31,4 +51,52 @@ class RomanNumberConverter {
 
         return null;
     }
+
+    public int toDigit(String roman) {
+
+        ArrayList<String> list = listOfRomans(roman);
+
+        int sumOfRomanValues = sumAllRomanValues(list);
+
+        return sumOfRomanValues;
+    }
+
+    private ArrayList<String> listOfRomans(String roman) {
+
+        ArrayList<String> list = new ArrayList<String>();
+
+        for (int i = 0; i < roman.length(); i++) {
+
+            if (i + 1 < roman.length()) {
+                int currentRomanTokenValue = numbersInverted.get(Character.toString(roman.charAt(i)));
+                int nextRomanTokenValue = numbersInverted.get(Character.toString(roman.charAt(i + 1)));
+                if (currentRomanTokenValue < nextRomanTokenValue) {
+                    list.add(roman.charAt(i) + "" + roman.charAt(i + 1));
+                    i++;
+                } else {
+                    list.add(String.valueOf(roman.charAt(i)));
+                }
+
+            } else {
+                list.add(String.valueOf(roman.charAt(i)));
+            }
+        }
+
+        return list;
+
+    }
+
+    private int sumAllRomanValues(ArrayList<String> listOfRomans) {
+
+       int sum = 0;
+
+       for(String currentRoman : listOfRomans) {
+           sum += numbersInverted.get(currentRoman);
+       }
+
+       return sum;
+    }
+
+
+
 }

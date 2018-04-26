@@ -1,8 +1,10 @@
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class RomanNumberConverterTest {
+
     private final RomanNumberConverter converter = new RomanNumberConverter();
 
     @Test
@@ -124,4 +126,48 @@ public class RomanNumberConverterTest {
     public void evaluates_number_314() {
         assertEquals("CCCXIV", converter.toRoman(314));
     }
+
+    @Test
+    public void evaluates_number_I() {
+
+        assertEquals(1, converter.toDigit("I"));
+    }
+
+    @Test
+    public void evaluates_number_II() {
+        assertEquals(2, converter.toDigit("II"));
+    }
+
+
+    @Test
+    public void evaluates_number_III() {
+        assertEquals(3, converter.toDigit("III"));
+    }
+
+    @Test
+    public void evaluates_number_IV() {
+        assertEquals(4, converter.toDigit("IV"));
+    }
+
+    @Test
+    public void evaluates_number_V() {
+        assertEquals(5, converter.toDigit("V"));
+    }
+
+    @Test
+    public void evaluates_number_DCCXCIV() {
+        assertEquals(794, converter.toDigit("DCCXCIV"));
+    }
+
+    @Test
+    public void evaluates_number_CMLXXXII() {
+        assertEquals(982, converter.toDigit("CMLXXXII"));
+    }
+
+    @Test
+    public void evaluates_number_MCMLXXXVI() {
+        assertEquals(1986, converter.toDigit("MCMLXXXVI"));
+    }
+
+
 }
