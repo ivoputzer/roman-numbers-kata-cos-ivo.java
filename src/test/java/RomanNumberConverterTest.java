@@ -137,6 +137,7 @@ public class RomanNumberConverterTest {
         assertEquals(2, converter.toDigit("II"));
     }
 
+
     @Test
     public void evaluates_number_III() {
         assertEquals(3, converter.toDigit("III"));
@@ -153,8 +154,19 @@ public class RomanNumberConverterTest {
     }
 
     @Test
-    @Ignore
-    public void evaluates_number_VI() {
-        assertEquals(6, converter.toDigit("VI"));
+    public void evaluates_number_DCCXCIV() {
+        assertEquals(794, converter.toDigit("DCCXCIV"));
     }
+
+    @Test
+    public void evaluates_number_CMLXXXII() {
+        assertEquals(982, converter.toDigit("CMLXXXII"));
+    }
+
+    @Test
+    public void evaluates_number_MCMLXXXVI() {
+        assertEquals(1986, converter.toDigit("MCMLXXXVI"));
+    }
+
+
 }
