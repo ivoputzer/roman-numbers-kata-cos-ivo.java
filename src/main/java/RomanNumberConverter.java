@@ -56,7 +56,7 @@ class RomanNumberConverter {
 
         ArrayList<String> list = listOfRomanValues(roman);
 
-        int sumOfRomanValues = sumAllRomanValues(list, 0, 0);
+        int sumOfRomanValues = sumAllRomanValues(list);
 
         return sumOfRomanValues;
     }
@@ -86,18 +86,15 @@ class RomanNumberConverter {
 
     }
 
-    private int sumAllRomanValues(ArrayList<String> tokens, int index, int sum) {
+    private int sumAllRomanValues(ArrayList<String> listOfRomans) {
+        
+       int sum = 0;
 
-        if(tokens.size() == index)
-            return sum;
+       for(String currentRoman : listOfRomans) {
+           sum += numbersInverted.get(currentRoman);
+       }
 
-        int currentSum = 0;
-
-        String currentToken = tokens.get(index);
-
-        currentSum += numbersInverted.get(currentToken);
-
-        return sumAllRomanValues(tokens, index+1, sum + currentSum);
+       return sum;
     }
 
 
