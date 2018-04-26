@@ -32,7 +32,31 @@ class RomanNumberConverter {
         return null;
     }
 
-    public int toDigit(String i) {
-        return 1;
+    public int toDigit(String roman) {
+
+        int totalOfI = 0;
+        char oneInRoman = 'I';
+
+        int toReturn = 0;
+
+
+        for(int i = 0; i < roman.length(); i++) {
+            if(roman.charAt(i) == oneInRoman) {
+                totalOfI++;
+            }
+        }
+
+        toReturn = totalOfI;
+
+        for (Map.Entry<Integer, String> entry : numbers.entrySet()) {
+            if (roman == entry.getValue()) {
+                toReturn = entry.getKey();
+            }
+        }
+
+
+
+        return toReturn;
     }
+
 }
