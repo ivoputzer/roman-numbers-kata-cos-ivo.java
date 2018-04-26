@@ -3,6 +3,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class RomanNumberConverterTest {
+
     private final RomanNumberConverter converter = new RomanNumberConverter();
 
     @Test
@@ -123,5 +124,10 @@ public class RomanNumberConverterTest {
     @Test
     public void evaluates_number_314() {
         assertEquals("CCCXIV", converter.toRoman(314));
+    }
+
+    @Test
+    public void evaluates_number_I() {
+        assertEquals(1, converter.toDigit("I"));
     }
 }

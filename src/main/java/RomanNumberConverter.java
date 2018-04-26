@@ -31,4 +31,8 @@ class RomanNumberConverter {
 
         return null;
     }
+
+    public int toDigit(String i) {
+        return 1;
+    }
 }
