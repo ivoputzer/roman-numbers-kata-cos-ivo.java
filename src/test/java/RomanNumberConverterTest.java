@@ -129,6 +129,7 @@ public class RomanNumberConverterTest {
 
     @Test
     public void evaluates_number_I() {
+
         assertEquals(1, converter.toDigit("I"));
     }
 
