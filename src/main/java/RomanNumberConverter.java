@@ -54,14 +54,14 @@ class RomanNumberConverter {
 
     public int toDigit(String roman) {
 
-        ArrayList<String> list = listOfRomanValues(roman);
+        ArrayList<String> list = listOfRomans(roman);
 
         int sumOfRomanValues = sumAllRomanValues(list);
 
         return sumOfRomanValues;
     }
 
-    private ArrayList<String> listOfRomanValues (String roman) {
+    private ArrayList<String> listOfRomans(String roman) {
 
         ArrayList<String> list = new ArrayList<String>();
 
@@ -87,7 +87,7 @@ class RomanNumberConverter {
     }
 
     private int sumAllRomanValues(ArrayList<String> listOfRomans) {
-        
+
        int sum = 0;
 
        for(String currentRoman : listOfRomans) {
